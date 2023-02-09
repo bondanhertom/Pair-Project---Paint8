@@ -202,9 +202,11 @@
         <div class="screen__content">
           <h2>Pain8</h2>
           <br />
-          <h4 style="text-align: center; color: red"></h4>
-
-          
+          <h4 style="text-align: center; color: red"> 
+            <% if(error) { %>
+              <%= error %>
+            <% } %>
+          </h4>
           <form class="login" action="/login" method="post"> 
             <div class="login__field">
               <i class="login__icon fas fa-user"></i>

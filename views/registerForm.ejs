@@ -200,7 +200,7 @@
     <div class="container">
       <div class="screen">
         <div class="screen__content">
-          <h2>Paint8</h2>
+          <h2>Pain8</h2>
           <br />
           <h4 style="text-align: center; color: red"></h4>
 
@@ -218,10 +218,15 @@
               <i class="login__icon fas fa-lock"></i>
               <input type="password" class="login__input" name="password" placeholder="password" />
             </div>
+
             <div class="login__field">
-              <i class="login__icon fas fa-lock"></i>
-              <input type="text" class="login__input" name="role" placeholder="choose creator/user" />
-            </div>
+                <select  name="role" aria-label="Default select example">
+                  <option selected value="<%=null%>">choose creator/user</option>
+                  <option value="Creator">Creator</option>
+                  <option value="User">User</option>
+                </select>
+              </div>
+
             <button class="button login__submit">
               <span class="button__text">Register</span>
               <i class="button__icon fas fa-chevron-right"></i>
