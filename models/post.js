@@ -1,4 +1,5 @@
 'use strict';
+const generateRelativeTime = require("../helper");
 const {
   Model
 } = require('sequelize');
@@ -17,17 +18,27 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
 
+    get time() {
+      return generateRelativeTime(this.createdAt);
+    }
+
   }
-  
+
   Post.init({
     title: DataTypes.STRING,
     caption: DataTypes.TEXT,
     imageUrl: DataTypes.STRING,
     likes: DataTypes.INTEGER,
     UserId: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Post',
+  },
+    {
+      sequelize,
+      modelName: 'Post',
+    }
+  );
+  Post.beforeCreate((post, option) => {
+    post.likes = 0;
+    post.dislikes = 0;
   });
   return Post;
 };

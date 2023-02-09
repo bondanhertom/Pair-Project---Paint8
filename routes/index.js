@@ -43,10 +43,10 @@ router.get("/upload", Controller.addPostingan);
 router.post("/upload", Controller.saveAddPosting);
 
 // // DESTROY // EDIT // LIKE
-// router.get("/delete/:id", Controller.totalDislikes);
+router.get("/delete/:id", Controller.totalDislikes);
 router.get("/edit/:id", Controller.updatePost);
 router.post("/edit/:id", Controller.saveUpdate);
-// router.get("/likes/:id", Controller.totalLikes);
+router.get("/likes/:id", Controller.totalLikes);
 
 
 

@@ -13,8 +13,14 @@ class Controller {
             .then((newUser) => {
                 res.redirect("/login")
             })
-            .catch(err => res.send(err))
-
+            .catch((err) => {
+                if (err.name === "SequelizeValidationError") {
+                    const errors = err.errors.map((el) => {
+                        return el.message;
+                    });
+                    res.send(errors);
+                }
+            });
     }
     //// LOGIN //////////
     static loginForm(req, res) {
@@ -129,6 +135,34 @@ class Controller {
             })
     }
 
+
+    static totalLikes(req, res) {
+        const id = req.params.id;
+
+        Post.increment("likes", {
+            where: { id },
+        })
+            .then(() => {
+                res.redirect("/");
+            })
+            .catch((err) => {
+                res.send(err);
+            });
+    }
+
+    static totalDislikes(req, res) {
+        const id = req.params.id;
+
+        Post.decrement("likes", {
+            where: { id },
+        })
+            .then(() => {
+                res.redirect("/");
+            })
+            .catch((err) => {
+                res.send(err);
+            });
+    }
 
 
 }

@@ -47,18 +47,15 @@
                             <span class="material-symbols-outlined" style="margin-left: 1rem"> maps_ugc </span>
                             <p>
                             <h4>
-                                <%= el.likes %> likes
-                            </h4>
-                            </p>
-                            <p>
-                            <h4>
-                                <%= el.dislikes %> Dislikes
+                                <p><%= el.likes %> likes </p>
+                               <p> <%= el.dislikes %> Dislikes</p>  
                             </h4>
                             </p>
                             <p style="text-align: right;">
                             </p> <a href="/delete/<%= el.id%>"><button type="button"
                                     class="btn btn-danger">dislike</button></a>
                                     <a href="/edit/<%=el.id%>"><button type="button" class="btn btn-primary">edit</button></a>
+                                    <p><%= el.time %> </p>
                         </div>
                     </div>
                     <% }); %>
