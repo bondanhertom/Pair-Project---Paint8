@@ -16,7 +16,9 @@ module.exports = (sequelize, DataTypes) => {
         through: models.PostTag
       });
     }
+
   }
+  
   Post.init({
     title: DataTypes.STRING,
     caption: DataTypes.TEXT,

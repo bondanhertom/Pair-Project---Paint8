@@ -44,17 +44,28 @@ class Controller {
             .catch((err) => res.send(err))
 
     }
-
-    ////////////LOG OUT/////////
+    //////////LOG OUT/////////
     static getLogout(req, res) {
-        res.send("logout")
+        req.session.destroy((err) => {
+            if (err) {
+                res.send(err);
+            } else {
+                res.redirect("/login");
+            }
+        });
     }
+
 
     //// HOME ///////
     static home(req, res) {
         const { error } = req.query
-        res.render("home", { error })
-
+        Post.findAll({ include: { model: User } })
+            .then((users) => {
+                res.render("home", { users, error });
+            })
+            .catch((err) => {
+                res.send(err);
+            });
     }
     static addPostingan(req, res) {
         const id = req.params.id;
@@ -83,6 +94,39 @@ class Controller {
                     res.send(errors);
                 }
             });
+    }
+
+    static updatePost(req, res) {
+        const id = req.params.id;
+        Post.findByPk(id)
+            .then((post) => {
+                res.render("editPostingan", { post });
+            })
+            .catch((err) => {
+                if (err.name === "SequelizeValidationError") {
+                    const errors = err.errors.map((el) => {
+                        return el.message;
+                    });
+                    res.send(errors);
+                }
+            });
+    }
+
+    static saveUpdate(req, res) {
+        const { title, caption, imageUrl } = req.body;
+        const id = req.session.UserId;
+        Post.update({ title, caption, imageUrl, UserId: id },
+            {
+                where: {
+                    id: id
+                }
+            })
+            .then(() => {
+                res.redirect("/");
+            })
+            .catch((err) => {
+                res.send(err);
+            })
     }
 
 

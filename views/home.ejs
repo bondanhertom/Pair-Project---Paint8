@@ -18,39 +18,55 @@
             <br>
             <h2 style="color: red;"> </h2>
             <br>
-            <h3>Followers:
-            </h3>
             <h1 style="text-align: center;">PAIN8</h1><br>
+            <a href="/upload"><button type="button" class="btn btn-primary">ADD POST</button></a>
+            <a href="/logout"><button type="button" class="btn btn-primary">LOGOUT</button></a>
             <h4 style="text-align: center; color: red">
                 <% if(error) { %>
                     <%= error %>
                         <% } %>
             </h4>
-            <h2> <a href="/upload"><button type="button" class="btn btn-primary">ADD POST</button></a></h2>
             <br>
             <div class="card mb-3" style="text-align: left">
-                <div class="card-body">
-                    <h1 class="card-title" style="text-decoration: underline">
-                    </h1>
-                    <h4 class="card-text">
 
-                    </h4>
-                    <p class="card-text">
-                    </p>
-                    <a href="/likes/"><span class="material-symbols-outlined"> favorite </span></a>
-                    <span class="material-symbols-outlined" style="margin-left: 1rem"> maps_ugc </span>
-                    <p>
-                    <h4> likes</h4>
-                    </p>
-                    <p>
-                    <h4>Dislikes</h4>
-                    </p>
-                    <p>
-                    </p>
-                    <p style="text-align: right;"> </p> <a href="/delete/"><button type="button"
-                            class="btn btn-danger">dislike</button></a>
-                    <a href="/edit/"><button type="button" class="btn btn-primary">edit</button></a>
-                </div>
+
+                <% users.forEach(el=> { %>
+                    <div class="card mb-3" style="text-align: left">
+                        <img src="<%= el.imageUrl%>" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h1 class="card-title" style="text-decoration: underline">
+                                <%= el.User.username %>
+                            </h1>
+                            <h4 class="card-text">
+                                <%= el.title %>
+                            </h4>
+                            <p class="card-text">
+                                <%= el.caption %>
+                            </p>
+                            <a href="/likes/<%= el.id %>"><span class="material-symbols-outlined"> favorite </span></a>
+                            <span class="material-symbols-outlined" style="margin-left: 1rem"> maps_ugc </span>
+                            <p>
+                            <h4>
+                                <%= el.likes %> likes
+                            </h4>
+                            </p>
+                            <p>
+                            <h4>
+                                <%= el.dislikes %> Dislikes
+                            </h4>
+                            </p>
+                            <p style="text-align: right;">
+                            </p> <a href="/delete/<%= el.id%>"><button type="button"
+                                    class="btn btn-danger">dislike</button></a>
+                                    <a href="/edit/<%=el.id%>"><button type="button" class="btn btn-primary">edit</button></a>
+                        </div>
+                    </div>
+                    <% }); %>
+
+
+
+
+
             </div>
 
         </div>
