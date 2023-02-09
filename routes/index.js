@@ -8,12 +8,12 @@ router.post("/register/add", Controller.saveRegister)
 
 //LOGIN
 router.get("/login", Controller.loginForm)
+router.post("/login", Controller.saveLogin)
 
 //LOGOUT
 router.get("/logout", Controller.getLogout)
 
 //SESSION MIDLEWARE///
-router.post("/login", Controller.saveLogin)
 router.use(function (req, res, next) {
     console.log(req.session);
     if (!req.session.UserId) {
@@ -28,8 +28,6 @@ router.use(function (req, res, next) {
 router.get("/", Controller.home)
 
 // <<<<<<<<  ADD    >>>>>>>>>> //
-
-// <<<<<<<<  ADD    >>>>>>>>>> //
 router.use(function (req, res, next) {
     if (req.session.UserId && req.session.role !== "Creator") {
         const error = `You do not have permissions to access`;
@@ -38,7 +36,6 @@ router.use(function (req, res, next) {
         next();
     }
 });
-
 // <<<<<<<<<   ADD   >>>>>>>>>> //
 
 // POST UPLOAD
@@ -46,10 +43,10 @@ router.get("/upload", Controller.addPostingan);
 router.post("/upload", Controller.saveAddPosting);
 
 // // DESTROY // EDIT // LIKE
-// router.get("/delete/:id", Controller.totalDislikes);
-// router.get("/edit/:id", Controller.updatePost);
-// router.post("/edit/:id", Controller.saveUpdate);
-// router.get("/likes/:id", Controller.totalLikes);
+router.get("/delete/:id", Controller.totalDislikes);
+router.get("/edit/:id", Controller.updatePost);
+router.post("/edit/:id", Controller.saveUpdate);
+router.get("/likes/:id", Controller.totalLikes);
 
 
 
