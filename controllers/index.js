@@ -31,6 +31,7 @@ class Controller {
                     console.log(isValidPassword);
                     if (isValidPassword) {
                         //berhasil login
+                        req.session.UserId = user.id //set session di controller login, ngecek seesion di midlewere root
                         return res.redirect("/");
                         //res.send(user)
                     } else {
