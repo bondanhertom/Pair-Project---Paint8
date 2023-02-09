@@ -1,0 +1,37 @@
+[
+  {
+    "fullName": "Gilang Ramadhan",
+    "dateOfBirth": "01 12 1993",
+    "phoneNumber": 1111111111,
+    "imageProfile": "http://arah.in/memes-1",
+    "UserId": 1
+  },
+  {
+    "fullName": "Husin",
+    "dateOfBirth": "01 12 1991",
+    "phoneNumber": 1111111111,
+    "imageProfile": "http://arah.in/memes-1",
+    "UserId": 2
+  },
+  {
+    "fullName": "Hayyik L",
+    "dateOfBirth": "01 12 1994",
+    "phoneNumber": 1111111111,
+    "imageProfile": "http://arah.in/memes-1",
+    "UserId": 3
+  },
+  {
+    "fullName": "M Erisman",
+    "dateOfBirth": "01 12 1998",
+    "phoneNumber": 1111111111,
+    "imageProfile": "http://arah.in/memes-1",
+    "UserId": 4
+  },
+  {
+    "fullName": "Aman",
+    "dateOfBirth": "01 12 2000",
+    "phoneNumber": 1111111111,
+    "imageProfile": "http://arah.in/memes-1",
+    "UserId": 5
+  }
+]

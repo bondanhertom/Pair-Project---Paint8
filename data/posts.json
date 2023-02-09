@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Pagi",
+    "caption": "Tiada hari minggu saat bootcamp, semua hari adalah hari senin",
+    "imageUrl": "test",
+    "likes": 0,
+    "UserId": 1
+  },
+  {
+    "title": "Makanan",
+    "caption": "Jangan terlalu banyak makan daging",
+    "imageUrl": "test",
+    "likes": 0,
+    "UserId": 2
+  },
+  {
+    "title": "Olahraga Sore",
+    "caption": "Aku berjalan kamu lari meninggalkan",
+    "imageUrl": "test",
+    "likes": 0,
+    "UserId": 3
+  },
+  {
+    "title": "Sepi",
+    "caption": "Hariku tanpamu bagai bootcamp tanpa teman",
+    "imageUrl": "test",
+    "likes": 0,
+    "UserId": 4
+  },
+  {
+    "title": "Lapr",
+    "caption": "Aku lapar",
+    "imageUrl": "test",
+    "likes": 0,
+    "UserId": 5
+  }
+]
