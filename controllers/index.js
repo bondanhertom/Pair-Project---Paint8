@@ -2,10 +2,10 @@ const { User, Profile, Post, Tag, PostTag } = require("../models")
 
 class Controller {
     ////REGISTER///
-    static register(res, req) {
+    static register(req, res) {
         res.render("registerForm")
     }
-    static saveRegister(res, req) {
+    static saveRegister(req, res) {
         const { username, email, password, role } = req.body
         User.create({ username, email, password, role })
             .then((newUser) => {
@@ -15,15 +15,15 @@ class Controller {
 
     }
     //// LOGIN //////////
-    static loginForm(res, req) {
-        res.render("/login")
+    static loginForm(req, res) {
+        res.render("login")
     }
-    static saveLogin(res, req) {
+    static saveLogin(req, res) {
         res.send("login save")
     }
 
     //// HOME ///////
-    static home(res, req) {
+    static home(req, res) {
         res.render("home")
     }
 
