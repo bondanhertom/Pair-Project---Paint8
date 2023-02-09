@@ -1,0 +1,32 @@
+[
+  {
+    "username": "Gilang Ramadhan",
+    "email": "gilang@mail.com",
+    "password": "semarangGarut",
+    "role": "Creator"
+  },
+  {
+    "username": "Husin",
+    "email": "husin@mail.com",
+    "password": "surabayaLampung",
+    "role": "User"
+  },
+  {
+    "username": "Hayyik L",
+    "email": "hayyik@mail.com",
+    "password": "yogyakarta1000cerita",
+    "role": "Creator"
+  },
+  {
+    "username": "M Erisman",
+    "email": "erisman@mail.com",
+    "password": "erismanInDepok",
+    "role": "User"
+  },
+  {
+    "username": "Aman",
+    "email": "aman@mail.com",
+    "password": "sukabumiSukaKamu",
+    "role": "User"
+  }
+]
